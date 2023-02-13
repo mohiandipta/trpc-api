@@ -12,7 +12,7 @@ export const subscribeRouter = createTRPCRouter({
     )
     .query(({ input }) => {
       return {
-        pleaseSubscribe: `Please do subscribe to: ${input}`,
+        pleaseSubscribe: `Please do subscribe to: ${input.text}`,
       };
     }),
 });

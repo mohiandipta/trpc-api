@@ -6,8 +6,8 @@ import { api } from "../utils/api";
 
 const Home: NextPage = () => {
   // const hello = api.example.hello.useQuery({ text: "from tRPC" });
-  const subs = api.subscribe.sub.useQuery({text: ''})
-
+  const subs = api.subscribe.sub.useQuery({text: 'For Those Who Code'})
+  console.log(subs.data?.pleaseSubscribe)
   return (
     <>
       <Head>
@@ -45,7 +45,7 @@ const Home: NextPage = () => {
             </Link>
           </div>
           <p className="text-2xl text-white">
-            {/* {hello.data ? hello.data.greeting : "Loading tRPC query..."} */}
+            {subs.data?.pleaseSubscribe}
           </p>
         </div>
       </main>
