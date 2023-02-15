@@ -21,14 +21,14 @@ const newnote = ({title, description}: FormData) => {
           <input
             type="text"
             required
-            value={"data.title"}
+            value={data.title}
             placeholder="Your title"
             onChange={() => {}}
             className="border-1 mb-2 block w-full rounded-sm border-green-800 bg-neutral-100 px-4 py-2 focus:outline-none"
           />
           <textarea
             required
-            value={"data.description"}
+            value={data.description}
             placeholder="Your description"
             onChange={() => {}}
             className="border-1 mb-2 block w-full rounded-sm border-green-800 bg-neutral-100 px-4 py-2 focus:outline-none"
