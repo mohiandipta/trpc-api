@@ -1,16 +1,15 @@
-import { NextPage } from "next";
-import { Head } from "next/document";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
+import { FormData } from "../types/types";
 
-type Props = {};
+const newnote = ({title, description}: FormData) => {
+  const [data, setData] = useState({title:'', description: ''})
 
-const newnote = (props: Props) => {
   return (
     <div className="mx-20">
       <main className="mx-auto flex min-h-screen flex-col justify-center py-10 md:container">
         <Link
-          className="w-20 indigo-700 inline-block py-4 text-base font-semibold leading-7 text-center text-green-700"
+          className="indigo-700 inline-block w-20 py-4 text-center text-base font-semibold leading-7 text-green-700"
           href="/"
         >
           Go back
@@ -18,20 +17,18 @@ const newnote = (props: Props) => {
         <h1 className="mb-6 text-left text-3xl font-bold tracking-tight text-gray-900">
           Add new notes
         </h1>
-        <form
-          onSubmit={()=>{}}
-        >
+        <form onSubmit={() => {}}>
           <input
             type="text"
             required
-            value={'data.title'}
+            value={"data.title"}
             placeholder="Your title"
             onChange={() => {}}
             className="border-1 mb-2 block w-full rounded-sm border-green-800 bg-neutral-100 px-4 py-2 focus:outline-none"
           />
           <textarea
             required
-            value={'data.description'}
+            value={"data.description"}
             placeholder="Your description"
             onChange={() => {}}
             className="border-1 mb-2 block w-full rounded-sm border-green-800 bg-neutral-100 px-4 py-2 focus:outline-none"
