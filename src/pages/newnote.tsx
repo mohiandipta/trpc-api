@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { FormData } from "../types/types";
 
 const newnote = ({ title, description }: FormData) => {
-  const [data, setData] = useState({ title: "", description: "" });
+  const [data, setData] = useState({ title: title, description: description });
 
   return (
     <div className="mx-20">
