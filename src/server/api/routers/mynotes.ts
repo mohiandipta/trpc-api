@@ -18,5 +18,16 @@ export const notesRouter = createTRPCRouter({
             } catch (error) {
                 console.log(`Notes can not be created ${error}`)
             }
+        }),
+    allNotes: publicProcedure.query( async ({ctx}) => {
+        return await ctx.prisma.notes.findMany({
+            select: {
+                title: true,
+                id: true
+            },
+            orderBy: {
+                createdAt: "desc"
+            }
         })
+    })
 })

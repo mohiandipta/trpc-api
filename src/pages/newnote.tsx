@@ -1,9 +1,12 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { FormData } from "../types/types";
+import { api } from "../utils/api";
 
 const newnote = ({ title, description }: FormData) => {
   const [data, setData] = useState({ title: title, description: description });
+  const addNewNote = api.mynotes.newNote.useMutation({})
+  console.log(addNewNote)
 
   return (
     <div className="mx-20">
@@ -17,7 +20,10 @@ const newnote = ({ title, description }: FormData) => {
         <h1 className="mb-6 text-left text-3xl font-bold tracking-tight text-gray-900">
           Add new notes
         </h1>
-        <form onSubmit={() => {}}>
+        <form onSubmit={(e) => addNewNote.mutate({
+          title: data.title,
+          description: data.description
+        })}>
           <input
             type="text"
             required
