@@ -5,7 +5,11 @@ import { api } from "../utils/api";
 
 const newnote = ({ title, description }: FormData) => {
   const [data, setData] = useState({ title: title, description: description });
-  const addNewNote = api.mynotes.newNote.useMutation({})
+  const addNewNote = api.mynotes.newNote.useMutation({
+    onMutate: () => {
+      
+    }
+  })
   console.log(addNewNote)
 
   return (
