@@ -4,12 +4,13 @@ import { FormData } from "../types/types";
 
 const newnote = ({title, description}: FormData) => {
   const [data, setData] = useState({title:'', description: ''})
+  console.log(data)
 
   return (
     <div className="mx-20">
       <main className="mx-auto flex min-h-screen flex-col justify-center py-10 md:container">
         <Link
-          className="indigo-700 inline-block w-20 py-4 text-center text-base font-semibold leading-7 text-green-700"
+          className="indigo-700 inline-block w-20 py-1 rounded-md text-center text-base font-semibold leading-7 text-green-700 hover:bg-green-100"
           href="/"
         >
           Go back
@@ -23,14 +24,14 @@ const newnote = ({title, description}: FormData) => {
             required
             value={data.title}
             placeholder="Your title"
-            onChange={() => {}}
+            onChange={(e) => setData({...data, title: e.target.value})}
             className="border-1 mb-2 block w-full rounded-sm border-green-800 bg-neutral-100 px-4 py-2 focus:outline-none"
           />
           <textarea
             required
             value={data.description}
             placeholder="Your description"
-            onChange={() => {}}
+            onChange={(e) => setData({...data, description: e.target.value})}
             className="border-1 mb-2 block w-full rounded-sm border-green-800 bg-neutral-100 px-4 py-2 focus:outline-none"
           />
           <button
